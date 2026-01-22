@@ -1,0 +1,83 @@
+<div class="settings-container">
+    <div class="settings-card">
+        <h2 data-lang-ar="الإعدادات العامة" data-lang-en="General Settings">الإعدادات العامة</h2>
+
+        <div class="setting-item">
+            <div class="setting-info">
+                <h3 data-lang-ar="اللغة" data-lang-en="Language">اللغة</h3>
+                <p data-lang-ar="اختر لغة الواجهة" data-lang-en="Choose interface language">اختر لغة الواجهة</p>
+            </div>
+            <select id="languageSelect" class="setting-select">
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+
+        <div class="setting-item">
+            <div class="setting-info">
+                <h3 data-lang-ar="الوضع الليلي" data-lang-en="Dark Mode">الوضع الليلي</h3>
+                <p data-lang-ar="تفعيل أو إلغاء الوضع الليلي" data-lang-en="Enable or disable dark mode">تفعيل أو إلغاء
+                    الوضع الليلي</p>
+            </div>
+            <label class="toggle-switch">
+                <input type="checkbox" id="darkModeToggle" checked>
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+
+        <div class="setting-item">
+            <div class="setting-info">
+                <h3 data-lang-ar="التحديث التلقائي" data-lang-en="Auto Refresh">التحديث التلقائي</h3>
+                <p data-lang-ar="تحديث البيانات تلقائياً" data-lang-en="Auto Refresh Data">تحديث البيانات تلقائياً</p>
+            </div>
+            <label class="toggle-switch">
+                <input type="checkbox" id="autoRefreshToggle" checked>
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+
+        <!-- FFmpeg Settings Section -->
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+            <h2 data-lang-ar="إعدادات FFmpeg" data-lang-en="FFmpeg Settings">إعدادات FFmpeg</h2>
+
+            <div class="setting-item">
+                <div class="setting-info">
+                    <h3>FFmpeg Control</h3>
+                    <p data-lang-ar="التحكم في خدمة البث" data-lang-en="Control Streaming Service">التحكم في خدمة البث
+                    </p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn-danger" id="stopFfmpegBtn">
+                        <span data-lang-ar="إيقاف FFmpeg" data-lang-en="Stop FFmpeg">إيقاف FFmpeg</span>
+                    </button>
+                    <button class="btn-primary" id="autoFfmpegBtn">
+                        <span data-lang-ar="إنشاء FFmpeg تلقائي" data-lang-en="Auto Create FFmpeg">إنشاء FFmpeg
+                            تلقائي</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="setting-item">
+                <div class="setting-info">
+                    <h3>HLS Time</h3>
+                    <p>Seconds per segment</p>
+                </div>
+                <input type="number" id="hlsTime" class="setting-input" value="5">
+            </div>
+
+            <div class="setting-item">
+                <div class="setting-info">
+                    <h3>HLS List Size</h3>
+                    <p>Playlist entries</p>
+                </div>
+                <input type="number" id="hlsListSize" class="setting-input" value="10">
+            </div>
+
+            <div class="action-section" style="justify-content: flex-end;">
+                <button class="btn-primary" id="saveFfmpegSettings">
+                    <span data-lang-ar="حفظ الإعدادات" data-lang-en="Save Settings">حفظ الإعدادات</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

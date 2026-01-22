@@ -1,0 +1,41 @@
+<div class="stats-detailed">
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">📡</div>
+            <div>
+                <div class="stat-label">Total Channels</div>
+                <div class="stat-value" id="statTotal">...</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🟢</div>
+            <div>
+                <div class="stat-label">Live Channels</div>
+                <div class="stat-value" id="statLive">...</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div>
+                <div class="stat-label">Active Sessions</div>
+                <div class="stat-value" id="statSessions">...</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🖥️</div>
+            <div>
+                <div class="stat-label">Server Status</div>
+                <div class="stat-value" id="statStatus">...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container"
+        style="background:var(--bg-card); padding:20px; border-radius:var(--radius); border:1px solid var(--border);">
+        <h3 style="margin-bottom:20px;" data-lang-ar="إحصائيات البث" data-lang-en="Streaming Statistics">Streaming
+            Statistics</h3>
+        <div class="chart-placeholder">
+            <canvas id="statsChart" style="width:100%; height:300px;"></canvas>
+        </div>
+    </div>
+</div>

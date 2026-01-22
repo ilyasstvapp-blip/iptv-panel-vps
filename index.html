@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="لوحة تحكم IPTV احترافية - إدارة القنوات والبث المباشر">
+    <title>لوحة تحكم IPTV - Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="dark-mode">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-icon">📡</span>
+                <h2 class="logo-text">IPTV Panel</h2>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <button class="nav-item active" data-page="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text" data-lang-ar="الرئيسية" data-lang-en="Home">الرئيسية</span>
+            </button>
+            <button class="nav-item" data-page="channels">
+                <span class="nav-icon">📺</span>
+                <span class="nav-text" data-lang-ar="القنوات" data-lang-en="Channels">القنوات</span>
+            </button>
+            <button class="nav-item" data-page="statistics">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text" data-lang-ar="الإحصائيات" data-lang-en="Statistics">الإحصائيات</span>
+            </button>
+            <button class="nav-item" data-page="settings">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-text" data-lang-ar="الإعدادات" data-lang-en="Settings">الإعدادات</span>
+            </button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">👤</div>
+                <div class="user-details">
+                    <p class="user-name">Admin</p>
+                    <p class="user-role" data-lang-ar="مدير النظام" data-lang-en="System Admin">مدير النظام</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="top-header">
+            <h1 class="page-title" id="pageTitle">لوحة التحكم</h1>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" title="تبديل الوضع">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-area" id="contentArea">
+            <!-- Content will be loaded dynamically -->
+        </div>
+    </main>
+
+    <!-- Video Player Modal -->
+    <div class="modal hidden" id="videoModal">
+        <div class="modal-content video-modal">
+            <div class="modal-header">
+                <h3 id="videoModalTitle">تشغيل القناة</h3>
+                <button class="close-btn" id="closeVideoModal">✕</button>
+            </div>
+            <div class="modal-body">
+                <video id="videoPlayer" controls autoplay>
+                    <source id="videoSource" type="application/x-mpegURL">
+                    المتصفح لا يدعم تشغيل الفيديو
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal hidden" id="confirmModal">
+        <div class="modal-content confirm-modal">
+            <div class="modal-header">
+                <h3 data-lang-ar="تأكيد العملية" data-lang-en="Confirm Action">تأكيد العملية</h3>
+            </div>
+            <div class="modal-body">
+                <p id="confirmMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-danger" id="confirmYes">
+                    <span data-lang-ar="نعم" data-lang-en="Yes">نعم</span>
+                </button>
+                <button class="btn-secondary" id="confirmNo">
+                    <span data-lang-ar="إلغاء" data-lang-en="Cancel">إلغاء</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast hidden" id="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

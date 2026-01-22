@@ -1,0 +1,94 @@
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-icon">📺</div>
+        <div class="stat-info">
+            <h3 class="stat-value" id="totalChannels">0</h3>
+            <p class="stat-label" data-lang-ar="إجمالي القنوات" data-lang-en="Total Channels">إجمالي القنوات</p>
+        </div>
+    </div>
+    <div class="stat-card live">
+        <div class="stat-icon">🟢</div>
+        <div class="stat-info">
+            <h3 class="stat-value" id="liveChannels">0</h3>
+            <p class="stat-label" data-lang-ar="قنوات مباشرة" data-lang-en="Live Channels">قنوات مباشرة</p>
+        </div>
+    </div>
+    <div class="stat-card offline">
+        <div class="stat-icon">🔴</div>
+        <div class="stat-info">
+            <h3 class="stat-value" id="offlineChannels">0</h3>
+            <p class="stat-label" data-lang-ar="قنوات متوقفة" data-lang-en="Offline Channels">قنوات متوقفة</p>
+        </div>
+    </div>
+</div>
+
+<div class="action-section">
+    <button class="btn-primary" id="addChannelBtn">
+        <span class="btn-icon">➕</span>
+        <span data-lang-ar="إضافة قناة" data-lang-en="Add Channel">إضافة قناة</span>
+    </button>
+    <button class="btn-secondary" id="addGroupBtn">
+        <span class="btn-icon">➕</span>
+        <span data-lang-ar="إضافة باقة" data-lang-en="Add Group">إضافة باقة</span>
+    </button>
+</div>
+
+<!-- Add Group Form (Inline) -->
+<div class="form-container hidden inline-form" id="addGroupForm">
+    <div class="form-card">
+        <div class="form-header">
+            <h2 data-lang-ar="إضافة باقة جديدة" data-lang-en="Add New Group">إضافة باقة جديدة</h2>
+            <button class="close-btn" onclick="toggleForm('addGroupForm')">✕</button>
+        </div>
+        <form id="groupForm">
+            <div class="form-group">
+                <label for="groupName" data-lang-ar="اسم الباقة" data-lang-en="Group Name">اسم الباقة</label>
+                <input type="text" id="groupName" name="groupName" required placeholder="Ex: Sports, Movies...">
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">
+                    <span data-lang-ar="حفظ" data-lang-en="Save">حفظ</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Add Channel Form (Inline) -->
+<div class="form-container hidden inline-form" id="addChannelForm">
+    <div class="form-card">
+        <div class="form-header">
+            <h2 data-lang-ar="إضافة قناة جديدة" data-lang-en="Add New Channel">إضافة قناة جديدة</h2>
+            <button class="close-btn" onclick="toggleForm('addChannelForm')">✕</button>
+        </div>
+        <form id="channelForm">
+            <div class="form-group">
+                <label for="newChannelName" data-lang-ar="اسم القناة" data-lang-en="Channel Name">اسم القناة</label>
+                <input type="text" id="newChannelName" name="name" required placeholder="Ex: BeIN Sports 1">
+            </div>
+            <div class="form-group">
+                <label for="newChannelGroup" data-lang-ar="الباقة" data-lang-en="Group">الباقة</label>
+                <select id="newChannelGroup" name="group_id" required>
+                    <option value="" disabled selected>Select Group...</option>
+                    <!-- Populated dynamically via JS -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="newChannelType" data-lang-ar="نوع المصدر" data-lang-en="Source Type">نوع المصدر</label>
+                <select id="newChannelType" name="type" required>
+                    <option value="m3u8">M3U8</option>
+                    <option value="ts">TS</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="newChannelUrl" data-lang-ar="رابط المصدر" data-lang-en="Source URL">رابط المصدر</label>
+                <input type="url" id="newChannelUrl" name="url" required placeholder="http://example.com/stream.m3u8">
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">
+                    <span data-lang-ar="حفظ وتشغيل" data-lang-en="Save & Start">حفظ وتشغيل</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
